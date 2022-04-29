@@ -75,10 +75,10 @@ public class DepartmentListController implements Initializable {
 		tableViewDepartment.setItems(obsList);
 	}
 
-	private void createDialogForm( String absoluteName ,Stage parentStage) {
+	private void createDialogForm(String absoluteName, Stage parentStage) {
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource(absoluteName));
-			
+
 			Pane pane = loader.load();
 			Stage dialogStage = new Stage();
 			dialogStage.setTitle("Enter department date");
@@ -87,10 +87,9 @@ public class DepartmentListController implements Initializable {
 			dialogStage.initOwner(parentStage);
 			dialogStage.initModality(Modality.WINDOW_MODAL);
 			dialogStage.showAndWait();
-		}
-		catch (IOException e) {
+		} catch (IOException e) {
 			Alerts.showAlert("IOException", "Error loadgin view", e.getMessage(), AlertType.ERROR);
 		}
-		
+
 	}
 }
